@@ -51,18 +51,3 @@ resource "aws_instance" "udacity_t2" {
   key_name = "udacity"
 }
 
-# TODO: provision 2 m4.large EC2 instances named Udacity M4
-resource "aws_instance" "udacity_m4" {
-  count         = 2
-  ami           = "ami-0fff1b9a61dec8a5f"
-  instance_type = "m4.large"
-  subnet_id     = var.existing_public_subnet_id
-  vpc_security_group_ids = [aws_security_group.allow_ssh.id]
-
-  tags = {
-    Name = "Udacity M4"
-  }
-
-  # Enable connection via SSH
-  key_name = "udacity"
-}
