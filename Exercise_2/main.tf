@@ -24,6 +24,12 @@ resource "aws_lambda_function" "my_lambda" {
   filename         = "${path.module}/greet_lambda.zip"
   source_code_hash = filebase64sha256("greet_lambda.zip")
 
+  environment {
+    variables = {
+      greeting = "Hello"
+    }
+  }
+
   depends_on = [null_resource.zip_lambda]
 }
 
