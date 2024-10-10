@@ -13,11 +13,6 @@ variable "existing_public_subnet_id" {
   type        = string
 }
 
-variable "existing_public_subnet_id" {
-  description = "The ID of the existing public subnet"
-  type        = string
-}
-
 resource "aws_security_group" "allow_ssh" {
   vpc_id = var.existing_vpc_id
 
