@@ -6,7 +6,6 @@ variable "aws_region" {
 }
 
 variable "lambda_function_name" {
-  description = "The name of the Lambda function to be created"
   type        = string
   default     = "MySimpleLambdaFunction"
 }
