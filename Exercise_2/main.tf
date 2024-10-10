@@ -19,7 +19,7 @@ resource "null_resource" "zip_lambda" {
 resource "aws_lambda_function" "my_lambda" {
   function_name    = var.lambda_function_name
   role             = aws_iam_role.lambda_role.arn
-  handler          = "lambda.lambda_handler"
+  handler          = "greet_lambda.lambda_handler"
   runtime          = "python3.8"
   filename         = "${path.module}/greet_lambda.zip"
   source_code_hash = filebase64sha256("greet_lambda.zip")
